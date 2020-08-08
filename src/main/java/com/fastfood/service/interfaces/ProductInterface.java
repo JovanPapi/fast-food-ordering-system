@@ -17,4 +17,5 @@ public interface ProductInterface {
 
     void deleteProduct(String productId);
 
+    Product findProductById(String id);
 }

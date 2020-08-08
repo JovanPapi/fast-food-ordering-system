@@ -27,7 +27,7 @@ public class ProductInterfaceImpl implements ProductInterface {
     public void saveNewProduct(ProductDTO productDTO) {
         Product newProduct = new Product(UUID.randomUUID().toString(), productDTO.getName(),
                 productDTO.getPrice(), productDTO.getDescription(),
-                productDTO.getIngredients(), productDTO.getNameTranslate(), "",
+                productDTO.getIngredients(), productDTO.getType(), productDTO.getNameTranslate(), "",
                 "", new ArrayList<>());
 
         productRepository.save(newProduct);
@@ -50,5 +50,10 @@ public class ProductInterfaceImpl implements ProductInterface {
         Product deleteProduct = productRepository.findById(productId).get();
 
         productRepository.delete(deleteProduct);
+    }
+
+    @Override
+    public Product findProductById(String id) {
+        return productRepository.findById(id).get();
     }
 }

@@ -30,6 +30,9 @@ public class Product {
     private String ingredients;
 
     @Column
+    private String type;
+
+    @Column
     private String nameTranslate;
 
     @Column
