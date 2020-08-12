@@ -6,7 +6,6 @@ import com.fastfood.model.DTO.UserPasswordDTO;
 import com.fastfood.model.User;
 import org.springframework.stereotype.Service;
 
-@Service
 public interface UserInterface {
     User fetchCurrentUser(String userId);
 

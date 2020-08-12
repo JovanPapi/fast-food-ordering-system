@@ -5,11 +5,13 @@ import com.fastfood.model.DTO.ProductDTO;
 import com.fastfood.model.Product;
 import com.fastfood.model.User;
 import com.fastfood.service.interfaces.ProductInterface;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@Service
 public class ProductInterfaceImpl implements ProductInterface {
 
     private final ProductRepository productRepository;

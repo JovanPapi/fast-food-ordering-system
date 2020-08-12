@@ -6,10 +6,12 @@ import com.fastfood.model.DTO.UserLogin;
 import com.fastfood.model.DTO.UserPasswordDTO;
 import com.fastfood.model.User;
 import com.fastfood.service.interfaces.UserInterface;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
+@Service
 public class UserInterfaceImpl implements UserInterface {
 
     private final UserRepository userRepository;
