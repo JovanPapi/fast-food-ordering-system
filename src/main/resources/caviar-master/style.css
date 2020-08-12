@@ -1,12 +1,4 @@
-/* ----------------------------------------------
-:: Template Name: Caviar - Premium Restaurant Template
-:: Template Author: Colorlib
-:: Template Author URI: https://colorlib.com
-:: Version: v1.0
-:: Last Updated: 12-13-2017
----------------------------------------------- */
 
-/* Fonts */
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Work+Sans:400,500,600,700');
 
@@ -949,63 +941,6 @@ li {
     background-repeat: no-repeat;
 }
 
-/* Awards Area CSS */
-
-.caviar-awards-area {
-    padding-bottom: 200px;
-}
-
-.caviar-awards-area .section-heading {
-    margin-bottom: 0;
-}
-
-.testimonials-content {
-    padding: 70px 100px;
-    background-color: #fff;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-}
-
-/* Testimonials Area CSS */
-
-.caviar-testimonials-area {
-    padding-bottom: 200px;
-}
-
-.single-testimonial {
-    padding: 0 35px;
-}
-
-.testimonial-thumb-name {
-    margin-bottom: 30px;
-}
-
-.testimonial-thumb-name > img {
-    width: 80px!important;
-    height: 80px!important;
-    margin-right: 25px;
-    border-radius: 50%;
-}
-
-.testimonial-thumb-name .tes-name > h5 {
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.testimonial-thumb-name .tes-name > p {
-    line-height: 1;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 12px;
-    font-weight: 600;
-    font-family: 'Work Sans', sans-serif;
-    margin-bottom: 0;
-}
-
-.caviar-testimonials-slides .center .single-testimonial {
-    border-left: 1px solid #eaeaea;
-    border-right: 1px solid #eaeaea;
-}
 
 /* Reservation Area CSS */
 
@@ -1056,13 +991,13 @@ li {
 
 /* Footer Area CSS */
 
-.caviar-footer-area {
+.footer-area {
     background-color: #333333;
     padding: 40px 0;
     text-align: center;
 }
 
-.caviar-footer-area .navbar-brand {
+.footer-area .navbar-brand {
     font-size: 30px;
     margin-bottom: 40px;
 }
