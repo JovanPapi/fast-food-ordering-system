@@ -14,6 +14,7 @@
     <link href="/style.css" rel="stylesheet">
     <link href="/css/responsive/responsive.css" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -122,104 +123,47 @@
             <div class="col-10">
                 <div class="caviar-projects-menu">
                     <div class="text-center portfolio-menu">
-                        <button class="active" data-filter="*">All</button>
-                        <button data-filter=".burgers">Burgers</button>
-                        <button data-filter=".chicken">Chicken & Sandwich</button>
-                        <button data-filter=".drinks">Drinks</button>
-                        <button data-filter=".comboMeal">Combo Meals</button>
+                        <!--                        data-filter=".burgers"-->
+                        <button class="active" onclick="myFunction('burgers')" id="burgers_btn">Burgers</button>
+                        <button onclick="myFunction('chicken')" id="chicken_btn">Chicken & Sandwich</button>
+                        <button onclick="myFunction('drinks')" id="drinks_btn">Drinks</button>
+                        <button onclick="myFunction('combo')" id="combo_btn">Combo Meals</button>
                     </div>
                 </div>
 
-                <div class="caviar-menu-slides owl-carousel clearfix">
+                <div class="caviar-menu-slides owl-carousel clearfix" id="burgers">
 
-<!--                    <div class="caviar-portfolio clearfix" th:each="product: ${session.allProducts}">-->
+                    <div class="caviar-portfolio clearfix" th:each="product: ${session.burgers}">
 
-<!--                        <div th:if="${product.getType().equals('burger')}"-->
-<!--                             class="single_menu_item burgers wow fadeInUp">-->
-<!--                            <div class="d-sm-flex align-items-center">-->
-<!--                                <div class="dish-thumb">-->
-<!--                                    <img src="/img/menu-img/dish-1.png" alt="">-->
-<!--                                </div>-->
-<!--                                <div class="dish-description">-->
-<!--                                    <h3 th:text="${product.getName()}"></h3>-->
-<!--                                    <p th:text="${product.getDescription()}"></p>-->
-<!--                                    <div class="btn">-->
-<!--                                        ADD TO CARD-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="dish-value">-->
-<!--                                    <h3 th:text="${product.getPrice()}"></h3>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div th:unless="${product.getType().equals('drink')}"-->
-<!--                             class="single_menu_item burgers drinks wow fadeInUp">-->
-<!--                            <div class="d-sm-flex align-items-center">-->
-<!--                                <div class="dish-thumb">-->
-<!--                                    <img src="/img/menu-img/dish-2.png" alt="">-->
-<!--                                </div>-->
-<!--                                <div class="dish-description">-->
-<!--                                    <h3 th:text="${product.getName()}"></h3>-->
-<!--                                    <p th:text="${product.getDescription()}"></p>-->
-<!--                                    <div class="btn">-->
-<!--                                        ADD TO CARD-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="dish-value">-->
-<!--                                    <h3 th:text="${product.getPrice()}"></h3>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div th:unless="${product.getType().equals('chickenAndSandwich')}"-->
-<!--                             class="single_menu_item chicken wow fadeInUp">-->
-<!--                            <div class="d-sm-flex align-items-center">-->
-<!--                                <div class="dish-thumb">-->
-<!--                                    <img src="/img/menu-img/dish-3.png" alt="">-->
-<!--                                </div>-->
-<!--                                <div class="dish-description">-->
-<!--                                    <h3 th:text="${product.getName()}"></h3>-->
-<!--                                    <p th:text="${product.getDescription()}"></p>-->
-<!--                                    <div class="btn">-->
-<!--                                        ADD TO CARD-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="dish-value">-->
-<!--                                    <h3 th:text="${product.getPrice()}"></h3>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div th:unless="${product.getType().equals('comboMeal')}"-->
-<!--                             class="single_menu_item comboMeal wow fadeInUp">-->
-<!--                            <div class="d-sm-flex align-items-center">-->
-<!--                                <div class="dish-thumb">-->
-<!--                                    <img src="/img/menu-img/dish-3.png" alt="">-->
-<!--                                </div>-->
-<!--                                <div class="dish-description">-->
-<!--                                    <h3 th:text="${product.getName()}"></h3>-->
-<!--                                    <p th:text="${product.getDescription()}"></p>-->
-<!--                                    <div class="btn">-->
-<!--                                        ADD TO CARD-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="dish-value">-->
-<!--                                    <h3 th:text="${product.getPrice()}"></h3>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-
-                    <!--                    tuka e glavnoto meni ( prethodnoto e lizgacko )-->
-                    <div class="caviar-portfolio clearfix" th:each="product: ${session.allProducts}"
-                         th:switch="${product.getType()}">
-
-                        <div th:case="${'drink'}" class="single_menu_item drinks wow fadeInUp">
+                        <div class="single_menu_item wow fadeInUp">
                             <div class="d-sm-flex align-items-center">
                                 <div class="dish-thumb">
-                                    <img src="/img/menu-img/dish-1.png" alt="">
+                                    <img src="/img/menu-img/dish-1.png" alt="" width="100px" height="100px">
+                                </div>
+                                <div class="dish-description">
+                                    <h3 th:text="${product.getName()}"></h3>
+                                    <p th:text="${product.getDescription()}"></p>
+                                    <div class="btn">
+                                        ADD TO CARD
+                                    </div>
+                                </div>
+                                <div class="dish-value">
+                                    <h3 th:text="${product.getPrice()}"></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+
+                <div class="caviar-menu-slides owl-carousel clearfix" id="chicken" style="display: none">
+
+                    <div class="caviar-portfolio clearfix" th:each="product: ${session.chicken}">
+
+                        <div class="single_menu_item wow fadeInUp">
+                            <div class="d-sm-flex align-items-center">
+                                <div class="dish-thumb">
+                                    <img src="/img/menu-img/dish-1.png" alt="" width="100px" height="100px">
                                 </div>
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
@@ -234,60 +178,60 @@
                             </div>
                         </div>
 
-<!--                        <div th:case="${'chickenAndSandwich'}" class="single_menu_item chicken drinks wow fadeInUp">-->
-<!--                            <div class="d-sm-flex align-items-center">-->
-<!--                                <div class="dish-thumb">-->
-<!--                                    <img src="/img/menu-img/dish-2.png" alt="">-->
-<!--                                </div>-->
-<!--                                <div class="dish-description">-->
-<!--                                    <h3 th:text="${product.getName()}"></h3>-->
-<!--                                    <p th:text="${product.getDescription()}"></p>-->
-<!--                                    <div class="btn">-->
-<!--                                        ADD TO CARD-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="dish-value">-->
-<!--                                    <h3 th:text="${product.getPrice()}"></h3>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                    </div>
+                    <br>
+                </div>
 
-<!--                        <div th:case="${'drink'}" class="single_menu_item drink wow fadeInUp">-->
-<!--                            <div class="d-sm-flex align-items-center">-->
-<!--                                <div class="dish-thumb">-->
-<!--                                    <img src="/img/menu-img/dish-3.png" alt="">-->
-<!--                                </div>-->
-<!--                                <div class="dish-description">-->
-<!--                                    <h3 th:text="${product.getName()}"></h3>-->
-<!--                                    <p th:text="${product.getDescription()}"></p>-->
-<!--                                    <div class="btn">-->
-<!--                                        ADD TO CARD-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="dish-value">-->
-<!--                                    <h3 th:text="${product.getPrice()}"></h3>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
 
-<!--                        <div th:case="${'comboMeal'}" class="single_menu_item comboMeal wow fadeInUp">-->
-<!--                            <div class="d-sm-flex align-items-center">-->
-<!--                                <div class="dish-thumb">-->
-<!--                                    <img src="/img/menu-img/dish-1.png" alt="">-->
-<!--                                </div>-->
-<!--                                <div class="dish-description">-->
-<!--                                    <h3 th:text="${product.getName()}"></h3>-->
-<!--                                    <p th:text="${product.getDescription()}"></p>-->
-<!--                                    <div class="btn">-->
-<!--                                        ADD TO CARD-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="dish-value">-->
-<!--                                    <h3 th:text="${product.getPrice()}"></h3>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                <div class="caviar-menu-slides owl-carousel clearfix" id="drinks" style="display: none">
 
+                    <div class="caviar-portfolio clearfix" th:each="product: ${session.drinks}">
+
+                        <div class="single_menu_item wow fadeInUp">
+                            <div class="d-sm-flex align-items-center">
+                                <div class="dish-thumb">
+                                    <img src="/img/menu-img/dish-1.png" alt="" width="100px" height="100px">
+                                </div>
+                                <div class="dish-description">
+                                    <h3 th:text="${product.getName()}"></h3>
+                                    <p th:text="${product.getDescription()}"></p>
+                                    <div class="btn">
+                                        ADD TO CARD
+                                    </div>
+                                </div>
+                                <div class="dish-value">
+                                    <h3 th:text="${product.getPrice()}"></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+                </div>
+
+
+                <div class="caviar-menu-slides owl-carousel clearfix" id="combo" style="display: none">
+
+                    <div class="caviar-portfolio clearfix" th:each="product: ${session.comboMeal}">
+
+                        <div class="single_menu_item wow fadeInUp">
+                            <div class="d-sm-flex align-items-center">
+                                <div class="dish-thumb">
+                                    <img src="/img/menu-img/dish-1.png" alt="" width="100px" height="100px">
+                                </div>
+                                <div class="dish-description">
+                                    <h3 th:text="${product.getName()}"></h3>
+                                    <p th:text="${product.getDescription()}"></p>
+                                    <div class="btn">
+                                        ADD TO CARD
+                                    </div>
+                                </div>
+                                <div class="dish-value">
+                                    <h3 th:text="${product.getPrice()}"></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
                     </div>
                 </div>
 
@@ -356,4 +300,36 @@
 <script src="/js/bootstrap/bootstrap.min.js"></script>
 <script src="/js/others/plugins.js"></script>
 <script src="/js/active.js"></script>
+
+<script>
+
+    function myFunction(divToRender) {
+
+        let x = document.getElementById(divToRender);
+        if (x.id.match("burgers")) {
+            x.style.display = "block";
+            document.getElementById("drinks").style.display = "none";
+            document.getElementById("combo").style.display = "none";
+            document.getElementById("chicken").style.display = "none";
+
+        } else if (x.id.match("chicken")) {
+            x.style.display = "block";
+            document.getElementById("burgers").style.display = "none";
+            document.getElementById("combo").style.display = "none";
+            document.getElementById("drinks").style.display = "none";
+
+        } else if (x.id.match("combo")) {
+            x.style.display = "block";
+            document.getElementById("burgers").style.display = "none";
+            document.getElementById("drinks").style.display = "none";
+            document.getElementById("chicken").style.display = "none";
+
+        } else if (x.id.match("drinks")) {
+            x.style.display = "block";
+            document.getElementById("burgers").style.display = "none";
+            document.getElementById("combo").style.display = "none";
+            document.getElementById("chicken").style.display = "none";
+        }
+    }
+</script>
 </body>

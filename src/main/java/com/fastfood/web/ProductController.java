@@ -25,7 +25,27 @@ public class ProductController {
 
     @GetMapping("/menu")
     private String fetchAllProducts(HttpSession session) {
-        session.setAttribute("allProducts", productInterface.fetchProducts());
+        session.setAttribute("burgers", productInterface.fetchProducts()
+                .stream()
+                .filter(product -> product.getType().equals("burger"))
+                .collect(Collectors.toList()));
+
+        session.setAttribute("chicken", productInterface.fetchProducts()
+                .stream()
+                .filter(product -> product.getType().equals("chickenAndSandwich"))
+                .collect(Collectors.toList()));
+
+        session.setAttribute("drinks", productInterface.fetchProducts()
+                .stream()
+                .filter(product -> product.getType().equals("drink"))
+                .collect(Collectors.toList()));
+
+        session.setAttribute("comboMeal", productInterface.fetchProducts()
+                .stream()
+                .filter(product -> product.getType().equals("comboMeal"))
+                .collect(Collectors.toList()));
+
+//        session.setAttribute("allProducts", productInterface.fetchProducts());
 
         return "menu-products";
     }
