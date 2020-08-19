@@ -7,12 +7,11 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
-
-@Entity(name = "products")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@Entity(name = "products")
 public class Product {
     @Id
     private String id;

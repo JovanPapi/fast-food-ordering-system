@@ -3,9 +3,16 @@ package com.fastfood.web;
 import com.fastfood.model.DTO.ProductDTO;
 import com.fastfood.model.Product;
 import com.fastfood.service.interfaces.ProductInterface;
+
+import java.util.*;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/products")
@@ -16,10 +23,11 @@ public class ProductController {
         this.productInterface = productInterface;
     }
 
-    @GetMapping("/all-products")
-    private String fetchAllProducts(Model model) {
-        model.addAttribute("allProducts", productInterface.fetchProducts());
-        return "menu";
+    @GetMapping("/menu")
+    private String fetchAllProducts(HttpSession session) {
+        session.setAttribute("allProducts", productInterface.fetchProducts());
+
+        return "menu-products";
     }
 
     // CREATE PRODUCT ACTIONS
