@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "products")
@@ -34,5 +35,6 @@ public class Product {
 
     @ManyToMany(mappedBy = "order")
     private List<User> userOrders;
+
 
 }
