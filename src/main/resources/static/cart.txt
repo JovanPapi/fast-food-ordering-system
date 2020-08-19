@@ -1,0 +1,3 @@
+So sekoe klikanje na kopceto add to card, sodvetniot proizvod se dodava vo koshnichka.Na templejtot za koshnicka se prikazhuva
+sekoj dodaden proizvod, ima opcija da se izberi brojot na proizvod koj saka da go naraca.Se potpolnuva forma kade shto ima
+polinja za ime i prezime, adresa i telefonski broj.So klikanje na kopceto narachaj se izvrshuva dostavata.
