@@ -23,7 +23,7 @@ public class Product {
     @Column
     private int price;
 
-    @Column
+    @Column(length = 700)
     private String description;
 
     @Column
@@ -31,15 +31,6 @@ public class Product {
 
     @Column
     private String type;
-
-    @Column
-    private String nameTranslate;
-
-    @Column
-    private String descriptionTranslate;
-
-    @Column
-    private String ingredientsTranslate;
 
     @ManyToMany(mappedBy = "order")
     private List<User> userOrders;

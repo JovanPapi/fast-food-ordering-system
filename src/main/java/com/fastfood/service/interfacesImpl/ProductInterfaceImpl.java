@@ -29,8 +29,7 @@ public class ProductInterfaceImpl implements ProductInterface {
     public void saveNewProduct(ProductDTO productDTO) {
         Product newProduct = new Product(UUID.randomUUID().toString(), productDTO.getName(),
                 productDTO.getPrice(), productDTO.getDescription(),
-                productDTO.getIngredients(), productDTO.getType(), productDTO.getNameTranslate(), "",
-                "", new ArrayList<>());
+                productDTO.getIngredients(), productDTO.getType(), new ArrayList<>());
 
         productRepository.save(newProduct);
     }
