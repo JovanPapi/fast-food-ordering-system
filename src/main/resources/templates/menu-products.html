@@ -144,8 +144,24 @@
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
                                     <p th:text="${product.getDescription()}"></p>
-                                    <div class="btn">
-                                        ADD TO CARD
+                                    <div class="d-flex">
+                                        <div>
+                                            <form th:action="@{/products/add-to-cart/{id}(id=${product.getId()})}"
+                                                  method="get">
+                                                <button type="submit" class="btn btn-info" style="width: 120px">
+                                                    Add to cart
+                                                </button>
+                                            </form>
+                                        </div>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div>
+                                            <form th:action="@{/user/get-cart-products/}"
+                                                  method="get">
+                                                <button type="submit" class="btn btn-info" style="width: 120px">
+                                                    View my cart
+                                                </button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="dish-value">
@@ -157,7 +173,7 @@
                     </div>
                 </div>
 
-                <div class="caviar-menu-slides owl-carousel clearfix" id="pizzas">
+                <div class="caviar-menu-slides owl-carousel clearfix" id="pizzas" style="display: none">
 
                     <div class="caviar-portfolio clearfix" th:each="product: ${session.pizzas}">
 
@@ -169,8 +185,8 @@
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
                                     <p th:text="${product.getDescription()}"></p>
-                                    <div class="row">
-                                        <div class="col-xl-4">
+                                    <div class="d-flex">
+                                        <div>
                                             <form th:action="@{/products/add-to-cart/{id}(id=${product.getId()})}"
                                                   method="get">
                                                 <button type="submit" class="btn btn-info" style="width: 120px">
@@ -178,7 +194,8 @@
                                                 </button>
                                             </form>
                                         </div>
-                                        <div class="col-xl-4">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div>
                                             <form th:action="@{/user/get-cart-products/}"
                                                   method="get">
                                                 <button type="submit" class="btn btn-info" style="width: 120px">
@@ -187,8 +204,6 @@
                                             </form>
                                         </div>
                                     </div>
-
-
                                 </div>
                                 <div class="dish-value">
                                     <h3 th:text="${product.getPrice()}"></h3>
@@ -211,8 +226,8 @@
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
                                     <p th:text="${product.getDescription()}"></p>
-                                    <div class="row">
-                                        <div class="col-xl-4">
+                                    <div class="d-flex">
+                                        <div>
                                             <form th:action="@{/products/add-to-cart/{id}(id=${product.getId()})}"
                                                   method="get">
                                                 <button type="submit" class="btn btn-info" style="width: 120px">
@@ -220,7 +235,8 @@
                                                 </button>
                                             </form>
                                         </div>
-                                        <div class="col-xl-4">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div>
                                             <form th:action="@{/user/get-cart-products/}"
                                                   method="get">
                                                 <button type="submit" class="btn btn-info" style="width: 120px">
@@ -253,8 +269,8 @@
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
                                     <p th:text="${product.getDescription()}"></p>
-                                    <div class="row">
-                                        <div class="col-xl-4">
+                                    <div class="d-flex">
+                                        <div>
                                             <form th:action="@{/products/add-to-cart/{id}(id=${product.getId()})}"
                                                   method="get">
                                                 <button type="submit" class="btn btn-info" style="width: 120px">
@@ -262,7 +278,8 @@
                                                 </button>
                                             </form>
                                         </div>
-                                        <div class="col-xl-4">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div>
                                             <form th:action="@{/user/get-cart-products/}"
                                                   method="get">
                                                 <button type="submit" class="btn btn-info" style="width: 120px">
@@ -295,8 +312,8 @@
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
                                     <p th:text="${product.getDescription()}"></p>
-                                    <div class="row">
-                                        <div class="col-xl-4">
+                                    <div class="d-flex">
+                                        <div>
                                             <form th:action="@{/products/add-to-cart/{id}(id=${product.getId()})}"
                                                   method="get">
                                                 <button type="submit" class="btn btn-info" style="width: 120px">
@@ -304,8 +321,9 @@
                                                 </button>
                                             </form>
                                         </div>
-                                        <div class="col-xl-4">
-                                            <form th:action="@{/user/get-cart-products}"
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div>
+                                            <form th:action="@{/user/get-cart-products/}"
                                                   method="get">
                                                 <button type="submit" class="btn btn-info" style="width: 120px">
                                                     View my cart
@@ -340,7 +358,7 @@
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="caviar-single-dish wow fadeInUp" data-wow-delay="0.5s">
-                    <img src="/img/egg_c.jpg" style="position: relative; right: 30px;" width="250" height="250"  alt="">
+                    <img src="/img/egg_c.jpg" style="position: relative; right: 30px;" width="250" height="250" alt="">
                     <div class="dish-info">
                         <h6 class="dish-name">Egg Muffin Meal</h6>
                         <p class="dish-price">$100</p>
@@ -349,7 +367,8 @@
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="caviar-single-dish wow fadeInUp" data-wow-delay="1s">
-                    <img src="/img/10_nuggets_c.jpg" style="position: relative; right: 30px;" width="250" height="250" alt="">
+                    <img src="/img/10_nuggets_c.jpg" style="position: relative; right: 30px;" width="250" height="250"
+                         alt="">
                     <div class="dish-info">
                         <h6 class="dish-name">10 piece Chicken Nuggets Meal</h6>
                         <p class="dish-price">$100</p>
@@ -358,7 +377,8 @@
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="caviar-single-dish wow fadeInUp" data-wow-delay="1.5s">
-                    <img src="/img/filet_c.jpg" style="position: relative; right: 30px;" width="250" height="250"alt="">
+                    <img src="/img/filet_c.jpg" style="position: relative; right: 30px;" width="250" height="250"
+                         alt="">
                     <div class="dish-info">
                         <h6 class="dish-name">Filet-O-Fish Mea</h6>
                         <p class="dish-price">$100</p>
@@ -401,16 +421,14 @@
             document.getElementById("chicken").style.display = "none";
             document.getElementById("pizzas").style.display = "none";
 
-        }
-        else if (x.id.match("pizzas")) {
+        } else if (x.id.match("pizzas")) {
             x.style.display = "block";
             document.getElementById("burgers").style.display = "none";
             document.getElementById("combo").style.display = "none";
             document.getElementById("chicken").style.display = "none";
             document.getElementById("drinks").style.display = "none";
 
-        }
-        else if (x.id.match("chicken")) {
+        } else if (x.id.match("chicken")) {
             x.style.display = "block";
             document.getElementById("burgers").style.display = "none";
             document.getElementById("combo").style.display = "none";
@@ -432,7 +450,6 @@
             document.getElementById("combo").style.display = "none";
             document.getElementById("chicken").style.display = "none";
             document.getElementById("pizzas").style.display = "none";
-
         }
     }
 </script>

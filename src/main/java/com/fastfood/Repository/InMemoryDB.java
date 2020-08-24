@@ -159,14 +159,22 @@ public class InMemoryDB {
         List<Product> pizza = new ArrayList<Product>() {{
             List<String> imageList = fillPizzasImage("pizza");
 
-            add(new Product(UUID.randomUUID().toString(),"Capricciosa", 100, "Very olives mixed with bacon,mushrooms,tomato sauce.",new ArrayList<>(), imageList.get(0)));
-            add(new Product(UUID.randomUUID().toString(),"Lossos", 100, "Cheese,bacon,Miller & tomato sauce,Laurel leaf.",new ArrayList<>(), imageList.get(1)));
-            add(new Product(UUID.randomUUID().toString(),"Margherita", 100, "Classic mozzarella cheese & tomato sauce.",new ArrayList<>(), imageList.get(2)));
-            add(new Product(UUID.randomUUID().toString(),"Milanese", 100, "Tomato sauce, salami, cheese, olives.",new ArrayList<>(), imageList.get(3)));
-            add(new Product(UUID.randomUUID().toString(),"Oliva", 100, "Oliva sauce, mozzarella, roast beef, turkey, fresh mushrooms, peppers and mixed olives.",new ArrayList<>(), imageList.get(4)));
-            add(new Product(UUID.randomUUID().toString(),"Pepperoni", 100, "Salami,pork beef seasoned with paprika or other chili pepper.",new ArrayList<>(), imageList.get(5)));
-            add(new Product(UUID.randomUUID().toString(),"Sicilian", 100, "Salami, pepperoni, italian sausage, green peppers & onions.",new ArrayList<>(), imageList.get(6)));
-            add(new Product(UUID.randomUUID().toString(),"Vegetarian", 100, "Fresh spinach, sweetcorn, mixed peppers, red onions & mushrooms.",new ArrayList<>(), imageList.get(7)));
+            add(new Product(UUID.randomUUID().toString(),"Capricciosa", 100, "Very olives mixed with bacon,mushrooms,tomato sauce.",
+                    "olives, bacon, mushrooms, tomato sauce","pizza",new ArrayList<>(), imageList.get(0)));
+            add(new Product(UUID.randomUUID().toString(),"Lossos", 100, "Cheese,bacon,Miller & tomato sauce,Laurel leaf.",
+                    "cheese, bacon, miller & tomato sauce, laurel leaf","pizza",new ArrayList<>(), imageList.get(1)));
+            add(new Product(UUID.randomUUID().toString(),"Margherita", 100, "Classic mozzarella cheese & tomato sauce.",
+                    "mozzarella cheese & tomato sauce","pizza",new ArrayList<>(), imageList.get(2)));
+            add(new Product(UUID.randomUUID().toString(),"Milanese", 100, "Tomato sauce, salami, cheese, olives.",
+                    "tomato sauce, salami, cheese, olives","pizza",new ArrayList<>(), imageList.get(3)));
+            add(new Product(UUID.randomUUID().toString(),"Oliva", 100, "Oliva sauce, mozzarella, roast beef, turkey, fresh mushrooms, peppers and mixed olives.",
+                    "oliva sauce, mozzarella, roast beef, turkey, fresh mushrooms, peppers","pizza",new ArrayList<>(), imageList.get(4)));
+            add(new Product(UUID.randomUUID().toString(),"Pepperoni", 100, "Salami,pork beef seasoned with paprika or other chili pepper.",
+                    "salami, pork beef with paprika, chilli pepper","pizza",new ArrayList<>(), imageList.get(5)));
+            add(new Product(UUID.randomUUID().toString(),"Sicilian", 100, "Salami, pepperoni, italian sausage, green peppers & onions.",
+                    "salami, pepperoni, italian sausage, green peppers & onions","pizza",new ArrayList<>(), imageList.get(6)));
+            add(new Product(UUID.randomUUID().toString(),"Vegetarian", 100, "Fresh spinach, sweetcorn, mixed peppers, red onions & mushrooms.",
+                    "fresh spinach, sweetcorn, mixed peppers, red onions, mushrooms","pizza",new ArrayList<>(), imageList.get(7)));
         }};
         productRepository.saveAll(pizza);
     }

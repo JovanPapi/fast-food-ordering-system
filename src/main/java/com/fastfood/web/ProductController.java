@@ -27,7 +27,7 @@ public class ProductController {
                 .filter(product -> product.getType().equals("burger"))
                 .collect(Collectors.toList()));
 
-        session.setAttribute("pizza", productInterface.fetchProducts()
+        session.setAttribute("pizzas", productInterface.fetchProducts()
                 .stream()
                 .filter(product -> product.getType().equals("pizza"))
                 .collect(Collectors.toList()));
