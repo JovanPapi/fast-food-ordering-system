@@ -116,7 +116,7 @@
         <div class="row">
             <div class="col-2">
                 <div class="food-menu-title">
-                    <h2>Menu</h2>
+                    <h2 style="color: black">Menu</h2>
                 </div>
             </div>
 
@@ -133,12 +133,13 @@
 
                 <div class="caviar-menu-slides owl-carousel clearfix" id="burgers">
 
-                    <div class="caviar-portfolio clearfix" th:each="product: ${session.burgers}">
+                    <div class="caviar-portfolio clearfix" th:each="product: ${session.burgers}" th:with="imgCounter=0">
 
                         <div class="single_menu_item wow fadeInUp">
                             <div class="d-sm-flex align-items-center">
                                 <div class="dish-thumb">
-                                    <img src="/img/menu-img/dish-1.png" alt="" width="100px" height="100px">
+                                    <img th:src="${product.getImage()}"
+                                         alt="" width="100px" height="100px">
                                 </div>
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
@@ -147,8 +148,8 @@
                                         ADD TO CARD
                                     </div>
                                 </div>
-                                <div class="dish-value">
-                                    <h3 th:text="${product.getPrice()}"></h3>
+                                <div class="dish-value" th:with="imgCounter=${imgCounter+1}">
+                                    <h3 th:text="${'$'+product.getPrice()}"></h3>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +164,7 @@
                         <div class="single_menu_item wow fadeInUp">
                             <div class="d-sm-flex align-items-center">
                                 <div class="dish-thumb">
-                                    <img src="/img/menu-img/dish-1.png" alt="" width="100px" height="100px">
+                                    <img th:src="${product.getImage()}" alt="" width="100px" height="100px">
                                 </div>
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
@@ -173,7 +174,7 @@
                                     </div>
                                 </div>
                                 <div class="dish-value">
-                                    <h3 th:text="${product.getPrice()}"></h3>
+                                    <h3 th:text="${'$'+product.getPrice()}"></h3>
                                 </div>
                             </div>
                         </div>
@@ -190,7 +191,7 @@
                         <div class="single_menu_item wow fadeInUp">
                             <div class="d-sm-flex align-items-center">
                                 <div class="dish-thumb">
-                                    <img src="/img/menu-img/dish-1.png" alt="" width="100px" height="100px">
+                                    <img th:src="${product.getImage()}" alt="" width="100px" height="100px">
                                 </div>
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
@@ -200,7 +201,7 @@
                                     </div>
                                 </div>
                                 <div class="dish-value">
-                                    <h3 th:text="${product.getPrice()}"></h3>
+                                    <h3 th:text="${'$'+product.getPrice()}"></h3>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +218,7 @@
                         <div class="single_menu_item wow fadeInUp">
                             <div class="d-sm-flex align-items-center">
                                 <div class="dish-thumb">
-                                    <img src="/img/menu-img/dish-1.png" alt="" width="100px" height="100px">
+                                    <img th:src="${product.getImage()}" alt="" width="100px" height="100px">
                                 </div>
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
@@ -227,7 +228,7 @@
                                     </div>
                                 </div>
                                 <div class="dish-value">
-                                    <h3 th:text="${product.getPrice()}"></h3>
+                                    <h3 th:text="${'$' + product.getPrice()}"></h3>
                                 </div>
                             </div>
                         </div>
@@ -252,28 +253,31 @@
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="caviar-single-dish wow fadeInUp" data-wow-delay="0.5s">
-                    <img src="/img/menu-img/dish-1.png" alt="">
+                    <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/regular/desktop/mcdonalds-Chicken-McNuggets-Mighty-Kids-Meals.png?$Category_Desktop$"
+                         alt="">
                     <div class="dish-info">
                         <h6 class="dish-name">Lorem Ipsum Dolor Sit Amet</h6>
-                        <p class="dish-price">$45</p>
+                        <p class="dish-price">$7</p>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="caviar-single-dish wow fadeInUp" data-wow-delay="1s">
-                    <img src="/img/menu-img/dish-2.png" alt="">
+                    <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/regular/desktop/h-mcdonalds-Chicken-McNuggets.png?$Category_Desktop$"
+                         alt="">
                     <div class="dish-info">
                         <h6 class="dish-name">Lorem Ipsum</h6>
-                        <p class="dish-price">$45</p>
+                        <p class="dish-price">$7</p>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="caviar-single-dish wow fadeInUp" data-wow-delay="1.5s">
-                    <img src="/img/menu-img/dish-3.png" alt="">
+                    <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/regular/desktop/h-mcdonalds-Hamburger.png?$Category_Desktop$"
+                         alt="">
                     <div class="dish-info">
                         <h6 class="dish-name">Lorem Ipsum Dolor Sit Amet</h6>
-                        <p class="dish-price">$45</p>
+                        <p class="dish-price">$7</p>
                     </div>
                 </div>
             </div>

@@ -6,8 +6,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -35,5 +37,7 @@ public class Product {
     @ManyToMany(mappedBy = "order")
     private List<User> userOrders;
 
+    @Column
+    private String image;
 
 }
