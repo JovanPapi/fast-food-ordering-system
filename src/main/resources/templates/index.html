@@ -73,11 +73,20 @@
                                             style="background: none!important; border: none"><b>Contact</b></button>
                                 </form>
                             </li>
+                            <li class="nav-item">
+                                <form method="get"
+                                          th:action="@{/user/html}">
+                                    <button type="submit" class="nav-link"
+                                            style="background: none!important; border: none"><b>Cart</b></button>
+                                </form>
+                            </li>
                         </ul>
-                        <!-- Search Btn -->
+                        <!--
                         <div class="caviar-search-btn">
                             <a id="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
                         </div>
+                        -->
+
                     </div>
                 </nav>
             </div>
@@ -107,10 +116,10 @@
                 </div>
             </div>
 
-            <div class="hero-slides-nav bg-img" style="background-image: url(/static/img/burgers/amigoB.jpg);"></div>
+            <div class="hero-slides-nav bg-img" style="background-image: url(/img/amigoB.jpg);"></div>
         </div>
 
-        <div class="single-hero-slides bg-img" style="background-image: url(/static/img/burgers/amigoB.jpg);">
+        <div class="single-hero-slides bg-img" style="background-image: url(/img/amigoB.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-11 col-md-6 col-lg-4">
@@ -157,35 +166,35 @@
         <div class="row">
             <div class="col-12 menu-heading">
                 <div class="section-heading text-center">
-                    <h2 style="color: black">Special</h2>
+                    <h2>Special</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="caviar-single-dish wow fadeInUp" data-wow-delay="0.5s">
-                    <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/regular/desktop/mcdonalds-Chicken-McNuggets-Mighty-Kids-Meals.png?$Category_Desktop$" alt="">
+                    <img src="/img/egg_c.jpg" style="position: relative; right: 30px;" width="250" height="250" alt="">
                     <div class="dish-info">
-                        <h6 class="dish-name">Lorem Ipsum Dolor Sit Amet</h6>
-                        <p class="dish-price">$7</p>
+                        <h6 class="dish-name">Egg Muffin Meal</h6>
+                        <p class="dish-price">$100</p>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="caviar-single-dish wow fadeInUp" data-wow-delay="1s">
-                    <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/regular/desktop/h-mcdonalds-Chicken-McNuggets.png?$Category_Desktop$" alt="">
+                    <img src="/img/10_nuggets_c.jpg" style="position: relative; right: 30px;" width="250" height="250" alt="">
                     <div class="dish-info">
-                        <h6 class="dish-name">Lorem Ipsum</h6>
-                        <p class="dish-price">$7</p>
+                        <h6 class="dish-name">10 piece Chicken Nuggets Meal</h6>
+                        <p class="dish-price">$100</p>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="caviar-single-dish wow fadeInUp" data-wow-delay="1.5s">
-                    <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/regular/desktop/h-mcdonalds-Hamburger.png?$Category_Desktop$" alt="">
+                    <img style="position: relative; right: 30px;" src="/img/filet_c.jpg" width="250" height="250"  alt="">
                     <div class="dish-info">
-                        <h6 class="dish-name">Lorem Ipsum Dolor Sit Amet</h6>
-                        <p class="dish-price">$7</p>
+                        <h6 class="dish-name">Filet-O-Fish Meal</h6>
+                        <p class="dish-price">$100</p>
                     </div>
                 </div>
             </div>
