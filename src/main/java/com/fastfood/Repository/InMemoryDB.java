@@ -154,7 +154,7 @@ public class InMemoryDB {
     }
 
     public void fillPizzas(){
-        List<Product> pizzas = new ArrayList<Product>() {{
+        List<Product> pizza = new ArrayList<Product>() {{
             List<String> imageList = fillPizzasImage("pizza");
 
             add(new Product(UUID.randomUUID().toString(),"Capricciosa", 100, "Very olives mixed with bacon,mushrooms,tomato sauce.",new ArrayList<>(), imageList.get(0)));
@@ -166,8 +166,7 @@ public class InMemoryDB {
             add(new Product(UUID.randomUUID().toString(),"Sicilian", 100, "Salami, pepperoni, italian sausage, green peppers & onions.",new ArrayList<>(), imageList.get(6)));
             add(new Product(UUID.randomUUID().toString(),"Vegetarian", 100, "Fresh spinach, sweetcorn, mixed peppers, red onions & mushrooms.",new ArrayList<>(), imageList.get(7)));
         }};
-        productRepository.saveAll(pizzas);
-
+        productRepository.saveAll(pizza);
     }
 
     // FILL DB AND IMAGES FOR CHICKEN AND SANDWICH
