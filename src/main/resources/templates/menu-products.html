@@ -85,6 +85,13 @@
                                             style="background: none!important; border: none"><b>Contact</b></button>
                                 </form>
                             </li>
+                            <li class="nav-item">
+                                <form method="get"
+                                      th:action="@{/user/get-cart-products}">
+                                    <button type="submit" class="nav-link"
+                                            style="background: none!important; border: none"><b>Cart</b></button>
+                                </form>
+                            </li>
                         </ul>
                         <!-- Search Btn -->
                         <div class="caviar-search-btn">
@@ -139,7 +146,7 @@
                         <div class="single_menu_item wow fadeInUp">
                             <div class="d-sm-flex align-items-center">
                                 <div class="dish-thumb">
-                                    <img src="/img/menu-img/dish-1.png" alt="" width="100px" height="100px">
+                                    <img th:src="${product.getImage()}" alt="" width="100px" height="100px">
                                 </div>
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
@@ -180,7 +187,7 @@
                         <div class="single_menu_item wow fadeInUp">
                             <div class="d-sm-flex align-items-center">
                                 <div class="dish-thumb">
-                                    <img src="/img/menu-img/dish-1.png" alt="" width="100px" height="100px">
+                                    <img th:src="${product.getImage()}" alt="" width="100px" height="100px">
                                 </div>
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
@@ -221,7 +228,7 @@
                         <div class="single_menu_item wow fadeInUp">
                             <div class="d-sm-flex align-items-center">
                                 <div class="dish-thumb">
-                                    <img src="/img/menu-img/dish-1.png" alt="" width="100px" height="100px">
+                                    <img th:src="${product.getImage()}" alt="" width="100px" height="100px">
                                 </div>
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
@@ -264,7 +271,7 @@
                         <div class="single_menu_item wow fadeInUp">
                             <div class="d-sm-flex align-items-center">
                                 <div class="dish-thumb">
-                                    <img src="/img/menu-img/dish-1.png" alt="" width="100px" height="100px">
+                                    <img th:src="${product.getImage()}" alt="" width="100px" height="100px">
                                 </div>
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
@@ -307,7 +314,7 @@
                         <div class="single_menu_item wow fadeInUp">
                             <div class="d-sm-flex align-items-center">
                                 <div class="dish-thumb">
-                                    <img src="/img/menu-img/dish-1.png" alt="" width="100px" height="100px">
+                                    <img th:src="${product.getImage()}" alt="" width="100px" height="100px">
                                 </div>
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
