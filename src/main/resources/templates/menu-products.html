@@ -144,9 +144,26 @@
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
                                     <p th:text="${product.getDescription()}"></p>
-                                    <div class="btn">
-                                        ADD TO CARD
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            <form th:action="@{/products/add-to-cart/{id}(id=${product.getId()})}"
+                                                  method="get">
+                                                <button type="submit" class="btn btn-info" style="width: 120px">
+                                                    Add to cart
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div class="col-xl-4">
+                                            <form th:action="@{/user/get-cart-products/}"
+                                                  method="get">
+                                                <button type="submit" class="btn btn-info" style="width: 120px">
+                                                    View my cart
+                                                </button>
+                                            </form>
+                                        </div>
                                     </div>
+
+
                                 </div>
                                 <div class="dish-value" th:with="imgCounter=${imgCounter+1}">
                                     <h3 th:text="${'$'+product.getPrice()}"></h3>
@@ -169,8 +186,23 @@
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
                                     <p th:text="${product.getDescription()}"></p>
-                                    <div class="btn">
-                                        ADD TO CARD
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            <form th:action="@{/products/add-to-cart/{id}(id=${product.getId()})}"
+                                                  method="get">
+                                                <button type="submit" class="btn btn-info" style="width: 120px">
+                                                    Add to cart
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div class="col-xl-4">
+                                            <form th:action="@{/user/get-cart-products/}"
+                                                  method="get">
+                                                <button type="submit" class="btn btn-info" style="width: 120px">
+                                                    View my cart
+                                                </button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="dish-value">
@@ -196,8 +228,23 @@
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
                                     <p th:text="${product.getDescription()}"></p>
-                                    <div class="btn">
-                                        ADD TO CARD
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            <form th:action="@{/products/add-to-cart/{id}(id=${product.getId()})}"
+                                                  method="get">
+                                                <button type="submit" class="btn btn-info" style="width: 120px">
+                                                    Add to cart
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div class="col-xl-4">
+                                            <form th:action="@{/user/get-cart-products/}"
+                                                  method="get">
+                                                <button type="submit" class="btn btn-info" style="width: 120px">
+                                                    View my cart
+                                                </button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="dish-value">
@@ -223,8 +270,23 @@
                                 <div class="dish-description">
                                     <h3 th:text="${product.getName()}"></h3>
                                     <p th:text="${product.getDescription()}"></p>
-                                    <div class="btn">
-                                        ADD TO CARD
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            <form th:action="@{/products/add-to-cart/{id}(id=${product.getId()})}"
+                                                  method="get">
+                                                <button type="submit" class="btn btn-info" style="width: 120px">
+                                                    Add to cart
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div class="col-xl-4">
+                                            <form th:action="@{/user/get-cart-products}"
+                                                  method="get">
+                                                <button type="submit" class="btn btn-info" style="width: 120px">
+                                                    View my cart
+                                                </button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="dish-value">

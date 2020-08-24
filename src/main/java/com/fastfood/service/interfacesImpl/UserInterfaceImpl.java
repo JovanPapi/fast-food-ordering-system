@@ -4,11 +4,13 @@ import com.fastfood.Repository.UserRepository;
 import com.fastfood.model.DTO.UserDTO;
 import com.fastfood.model.DTO.UserLogin;
 import com.fastfood.model.DTO.UserPasswordDTO;
+import com.fastfood.model.Product;
 import com.fastfood.model.User;
 import com.fastfood.service.interfaces.UserInterface;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -75,5 +77,14 @@ public class UserInterfaceImpl implements UserInterface {
     @Override
     public User findById(String id) {
         return userRepository.findById(id).get();
+    }
+
+    @Override
+    public List<Product> fetchUserProductCart() {
+        return userRepository.findAll()
+                .stream()
+                .findFirst()
+                .get()
+                .getOrder();
     }
 }

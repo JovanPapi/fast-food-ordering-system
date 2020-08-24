@@ -17,4 +17,7 @@ public interface ProductInterface {
     void deleteProduct(String productId);
 
     Product findProductById(String id);
+
+    void addToCartProduct(String id);
+
 }

@@ -4,23 +4,25 @@ import com.fastfood.model.Product;
 import com.fastfood.model.User;
 import org.springframework.stereotype.Repository;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.*;
 
 
 @Repository
 public class InMemoryDB {
     private final ProductRepository productRepository;
+    private final UserRepository userRepository;
+
     private String inputFile;
 
-    public InMemoryDB(ProductRepository productRepository) {
+    public InMemoryDB(ProductRepository productRepository, UserRepository userRepository) {
         this.productRepository = productRepository;
+        this.userRepository = userRepository;
     }
 
     public void populateDB() {
+        userRepository.save(new User(UUID.randomUUID().toString(), "Jovan", "Papalazoski",
+                "jovan.gppapi@hotmail.com", "sabja", "078-246-005", new ArrayList<>()));
+
         fillBurgers();
         fillChickenAndSandwich();
         fillComboMeal();

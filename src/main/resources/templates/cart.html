@@ -32,7 +32,7 @@
 </div>
 
 
-<header class="header_area" id="header">
+<header class="header_area" id="header" style="background-color: rgba(0, 0, 0, 0.85);">
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-12 h-100">
@@ -83,48 +83,67 @@
         </div>
     </div>
 </header>
-
+<br>
+<br>
+<br>
+<br>
 <div class="container">
     <div class="row">
 
         <table class="table  table-hover ">
             <tbody class="">
             <tr>
-                <th>Product</th>
-                <th></th>
-
+                <th>Product image</th>
+                <th>Product name</th>
                 <th>Price</th>
-                <th>Quantity</th>
 
-                <th>Subtotal</th>
-                <th></th>
+                <th>Description</th>
+                <th>Ingredients</th>
+
+                <th>Type</th>
+                <th>Action</th>
             </tr>
             </tbody>
-            <tbody class="">
+            <tbody class="" th:each="product:${session.userCart}">
 
             <tr class="align-content-center justify-content-center align-items-center">
-                <td class=""><img src="img/50x50.png" /></td>
-                <td class="text-left" style="">Product 1 <br>
-                    Quis aute iure reprehenderit in voluptate vellit essen cillum dolore eu fugiat
-                    nulla pariatur.Lorem ipsum dolor sit amet
+                <td class=""><img th:src="${product.getImage()}" alt="" width="100px" height="100px"></td>
+                <td class="text-left" style="" th:text="${product.getName()}"></td>
+                <td class="pt-lg-t" th:text="${product.getPrice()}"></td>
+                <td class="pt-lg-t">
+                    <div th:text="${product.getDescription()}" style="width: 210px; font-size: 14px"></div>
                 </td>
-                <td class="pt-lg-5">$1.99</td>
-                <td class="pt-lg-5"><textarea placeholder="1" style="height: 30px;"> 1</textarea></td>
-                <td class="pt-lg-5">1.99</td>
-                <td class="pt-lg-5 " ><div title="" href="" class="btn btn-primary" > <i class="fa fa-recycle"></i></div>
-                    <div title="" href="" class="btn btn-danger"  ><i class="fa fa-trash"></i></div>
+                <td class="pt-lg-t">
+                    <div th:text="${product.getIngredients()}" style="width: 210px; font-size: 14px"></div>
                 </td>
-
+                <td class="pt-lg-t">
+                    <div th:text="${product.getType()}" style="width:40px"></div>
+                </td>
+                <td class="pt-lg-t ">
+                    <div title="" href="" class="btn btn-danger"><i class="fa fa-trash"></i></div>
+                </td>
             </tr>
             </tbody>
+
             <tfoot>
             <tr>
-                <td style=" position: relative;right: 13px; width: 300px;"><div class="btn btn-warning text-white"><i 	class=" fa fa-angle-left"></i> Continue Shopping</div></td>
+                <td style=" position: relative;right: 13px; width: 300px;">
+                    <form th:action="@{/products/menu}"
+                          method="get">
+                        <button type="submit" class="btn btn-warning text-white">
+                            <i class=" fa fa-angle-left"></i>
+                            Continue Shopping
+                        </button>
+                    </form>
+                </td>
                 <td></td>
                 <td></td>
+                <td><b>Total price: $</b><b th:text=" ${session.totalPrice}"></b></td>
                 <td></td>
-                <td><b>Total $1.99</b></td>
-                <td><div style="width: 200px; position: relative;left: 13px;" class="btn btn-success">Checkout <i class="fa fa-angle-right"></i> </div> </td>
+                <td>
+                    <div style="width: 200px; position: relative;left: 13px;" class="btn btn-success">Checkout <i
+                            class="fa fa-angle-right"></i></div>
+                </td>
             </tr>
             </tfoot>
         </table>
@@ -134,19 +153,19 @@
 </div>
 
 
-<footer class="footer-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="footer-text">
-                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                        All rights reserved | Kristijan Nikoloski &nbsp; Jovan Papalazoski
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+<!--<footer class="footer-area align-bottom">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-12">-->
+<!--                <div class="footer-text">-->
+<!--                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>-->
+<!--                        All rights reserved | Kristijan Nikoloski &nbsp; Jovan Papalazoski-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</footer>-->
 </body>
 
 <script src="/js/jquery/jquery-2.2.4.min.js"></script>

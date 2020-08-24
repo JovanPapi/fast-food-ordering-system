@@ -3,6 +3,7 @@ package com.fastfood.web;
 import com.fastfood.model.DTO.UserDTO;
 import com.fastfood.model.DTO.UserLogin;
 import com.fastfood.model.DTO.UserPasswordDTO;
+import com.fastfood.model.Product;
 import com.fastfood.model.User;
 import com.fastfood.service.interfaces.UserInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/user")
@@ -74,6 +77,15 @@ public class UserController {
     private String saveUserNewPassword(Model model, UserPasswordDTO userPasswordDTO) {
         model.addAttribute("userProfile", userInterface.changePasswordUser(userPasswordDTO));
         return "profile";
+    }
+
+    @GetMapping("/get-cart-products")
+    private String userCart(HttpSession session) {
+        session.setAttribute("userCart", userInterface.fetchUserProductCart());
+        session.setAttribute("totalPrice", userInterface.fetchUserProductCart()
+                .stream()
+                .mapToInt(Product::getPrice).sum());
+        return "cart";
     }
 
 }

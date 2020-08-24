@@ -1,6 +1,7 @@
 package com.fastfood.service.interfacesImpl;
 
 import com.fastfood.Repository.ProductRepository;
+import com.fastfood.Repository.UserRepository;
 import com.fastfood.model.DTO.ProductDTO;
 import com.fastfood.model.Product;
 import com.fastfood.model.User;
@@ -15,9 +16,11 @@ import java.util.UUID;
 public class ProductInterfaceImpl implements ProductInterface {
 
     private final ProductRepository productRepository;
+    private final UserRepository userRepository;
 
-    public ProductInterfaceImpl(ProductRepository productRepository) {
+    public ProductInterfaceImpl(ProductRepository productRepository, UserRepository userRepository) {
         this.productRepository = productRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -29,7 +32,7 @@ public class ProductInterfaceImpl implements ProductInterface {
     public void saveNewProduct(ProductDTO productDTO) {
         Product newProduct = new Product(UUID.randomUUID().toString(), productDTO.getName(),
                 productDTO.getPrice(), productDTO.getDescription(),
-                productDTO.getIngredients(), productDTO.getType(), new ArrayList<>(),null);
+                productDTO.getIngredients(), productDTO.getType(), new ArrayList<>(), null);
 
         productRepository.save(newProduct);
     }
@@ -56,5 +59,15 @@ public class ProductInterfaceImpl implements ProductInterface {
     @Override
     public Product findProductById(String id) {
         return productRepository.findById(id).get();
+    }
+
+    @Override
+    public void addToCartProduct(String id) {
+        User u = userRepository.findAll().stream()
+                .findFirst()
+                .get();
+        u.getOrder().add(findProductById(id));
+
+        userRepository.save(u);
     }
 }
