@@ -4,14 +4,17 @@ import com.fastfood.model.DTO.ProductDTO;
 import com.fastfood.model.Product;
 import com.fastfood.service.interfaces.ProductInterface;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpSession;
-import java.util.Collections;
 import java.util.stream.Collectors;
 
 @Controller
@@ -44,8 +47,6 @@ public class ProductController {
                 .stream()
                 .filter(product -> product.getType().equals("comboMeal"))
                 .collect(Collectors.toList()));
-
-//        session.setAttribute("allProducts", productInterface.fetchProducts());
 
         return "menu-products";
     }
