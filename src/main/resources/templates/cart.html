@@ -125,10 +125,9 @@
                 </td>
                 <td class="pt-lg-t">
                     <form th:action="@{/user/delete-product/{id}(id=${product.getId()})}"
-                          method="post">
+                          method="get">
                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                     </form>
-                    <div title="" href="" class="btn btn-danger"><i class="fa fa-trash"></i></div>
                 </td>
             </tr>
             </tbody>
