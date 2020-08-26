@@ -87,4 +87,21 @@ public class UserInterfaceImpl implements UserInterface {
                 .get()
                 .getOrder();
     }
+
+    @Override
+    public void deleteProduct(String id) {
+        User u = userRepository.findAll()
+                .stream()
+                .findFirst()
+                .get();
+
+        Product p = u.getOrder()
+                .stream()
+                .filter(product -> product.getId().equals(id))
+                .findFirst()
+                .get();
+        u.getOrder().remove(p);
+
+        userRepository.save(u);
+    }
 }

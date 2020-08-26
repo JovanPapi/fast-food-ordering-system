@@ -88,4 +88,10 @@ public class UserController {
         return "cart";
     }
 
+    @GetMapping("/delete-product/{id}")
+    private String deleteProduct(@PathVariable String id) {
+        userInterface.deleteProduct(id);
+        return "redirect:/user/get-cart-products";
+    }
+
 }

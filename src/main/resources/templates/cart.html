@@ -127,7 +127,11 @@
                     <div th:text="${product.getType()}" style="width:40px"></div>
                 </td>
                 <td class="pt-lg-t ">
-                    <div title="" href="" class="btn btn-danger"><i class="fa fa-trash"></i></div>
+                    <form method="get"
+                          th:action="@{/user/delete-product/{id}
+                           (id=${product.getId()})}">
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                    </form>
                 </td>
             </tr>
             </tbody>

@@ -21,4 +21,7 @@ public interface UserInterface {
     User findById(String id);
 
     List<Product> fetchUserProductCart();
+
+    void deleteProduct(String id);
+
 }
