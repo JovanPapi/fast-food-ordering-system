@@ -123,7 +123,7 @@
                 <td class="pt-lg-t">
                     <div th:text="${product.getType()}" style="width:40px"></div>
                 </td>
-                <td class="pt-lg-t ">
+                <td class="pt-lg-t">
                     <div title="" href="" class="btn btn-danger"><i class="fa fa-trash"></i></div>
                 </td>
             </tr>
@@ -145,8 +145,24 @@
                 <td><b>Total price: $</b><b th:text=" ${session.totalPrice}"></b></td>
                 <td></td>
                 <td>
-                    <div style="width: 200px; position: relative;left: 13px;" class="btn btn-success">Checkout <i
-                            class="fa fa-angle-right"></i></div>
+                    <form action='/stripe/charge' method='POST' id='checkout-form'>
+                        <input type='hidden' th:value='${session.totalPrice}' name='amount'/>
+                        <label>Total price to pay: <span th:text='${session.totalPrice}'></span>$ DOLLARS</label>
+                        <!-- NOTE: data-key/data-amount/data-currency will be rendered by Thymeleaf -->
+                        <script
+                                src='https://checkout.stripe.com/checkout.js'
+                                class='stripe-button'
+                                th:attr='data-key=${session.STRIPE_P_KEY},
+                            data-amount=${session.totalPrice},
+                            data-currency=${session.currency}'
+                                data-name='Baeldung'
+                                data-description='Spring course checkout'
+                                data-image
+                                        ='https://www.baeldung.com/wp-content/themes/baeldung/favicon/android-chrome-192x192.png'
+                                data-locale='auto'
+                                data-zip-code='false'>
+                        </script>
+                    </form>
                 </td>
             </tr>
             </tfoot>
@@ -157,20 +173,8 @@
 </div>
 
 
-<!--<footer class="footer-area align-bottom">-->
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="col-12">-->
-<!--                <div class="footer-text">-->
-<!--                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>-->
-<!--                        All rights reserved | Kristijan Nikoloski &nbsp; Jovan Papalazoski-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</footer>-->
 </body>
+
 
 <script src="/js/jquery/jquery-2.2.4.min.js"></script>
 <script src="/js/bootstrap/popper.min.js"></script>
