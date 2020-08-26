@@ -85,6 +85,8 @@ public class UserController {
         session.setAttribute("totalPrice", userInterface.fetchUserProductCart()
                 .stream()
                 .mapToInt(Product::getPrice).sum());
+        session.setAttribute("currency","DOLLAR" );
+        session.setAttribute("STRIPE_P_KEY" ,"pk_test_TKKQFrZ2nBlaSL3wILTdTfsh00Z3VIYNVg");
         return "cart";
     }
 

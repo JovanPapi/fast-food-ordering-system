@@ -16,6 +16,7 @@ import java.util.List;
 @Setter
 @Entity(name = "products")
 public class Product {
+
     @Id
     private String id;
 
